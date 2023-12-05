@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Authorization\PermissionController;
 use App\Http\Controllers\Authorization\RoleController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -37,3 +38,11 @@ Route::put('/atualizar/perfil', [RoleController::class, 'update'])->name('atuali
 Route::delete('/deletar/perfil', [RoleController::class, 'destroy'])->name('deletar.perfil');
 Route::get('/vincular/perfil/{perfil}/permissao', [RoleController::class, 'permissions'])->name('vincular.perfil.permissao');
 Route::put('/vincular/perfil/{perfil}/permissao', [RoleController::class, 'permissionsSync'])->name('vincular.perfil.permissao');
+
+// Permission
+Route::get('/listar/permissao', [PermissionController::class, 'index'])->name('listar.permissao');
+Route::get('/criar/permissao', [PermissionController::class, 'create'])->name('criar.permissao');
+Route::post('/criar/permissao', [PermissionController::class, 'store'])->name('criar.permissao');
+Route::get('/editar/permissao/{permissao}', [PermissionController::class, 'edit'])->name('editar.permissao');
+Route::put('/atualizar/permissao', [PermissionController::class, 'update'])->name('atualizar.permissao');
+Route::delete('/deletar/permissao', [PermissionController::class, 'destroy'])->name('deletar.permissao');
