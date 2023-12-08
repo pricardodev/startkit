@@ -14,7 +14,7 @@
 
     </head>
     <body>
-        <h3>Login</h3>
+        <h3>Login</h3> <button class="btn btn-outline-dark">Teste</button>
         <a href="{{ route('login') }}">Login</a>
         <h3>Register</h3>
         <a href="{{ route('register') }}">Register</a>
